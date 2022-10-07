@@ -2,6 +2,12 @@
 ## Overview
 Spring data rest based service to manage domain objects. On top of spring data rest, it provides custom json response to cater to react front-end. Use this along with UI project at <a href="https://github.com/pat246/data-entry">Data Entry UI</a>
 
+##lib-data-entry
+Add this dependancy to your spring boot application so it will start exposing spring data rest endpoints
+
+##data-entry-demo
+Demo spring boot application using lib-data-entry project. It uses h2 db
+
 ## Versions
 1. Java - 1.8
 2. Spring boot - 2.6.1
