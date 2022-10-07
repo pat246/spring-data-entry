@@ -1,13 +1,11 @@
 package com.me.dataentry.entity;
 
 import java.util.Date;
-import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.validation.constraints.Max;
@@ -19,7 +17,6 @@ import javax.validation.constraints.Size;
 
 import org.springframework.data.annotation.ReadOnlyProperty;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.me.dataentry.exception.InvalidInputException;
 
 @Entity
