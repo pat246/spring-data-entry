@@ -1,6 +1,6 @@
 # spring-data-entry
 ## Overview
-Spring data rest based service to manage domain objects
+Spring data rest based service to manage domain objects. On top of spring data rest, it provides custom json response to cater to react front-end. Use this along with UI project at <a href="https://github.com/pat246/data-entry">Data Entry UI</a>
 
 ## Versions
 1. Java - 1.8
