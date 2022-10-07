@@ -47,10 +47,6 @@ public class Country {
     @ReadOnlyProperty
     Date createdAt;
     
-    @OneToMany
-    @JsonIgnore
-    List<State> states;
-
     public Long getId() {
         return id;
     }
@@ -110,13 +106,4 @@ public class Country {
         }
     }
 
-    @JsonIgnore
-    public List<State> getStates() {
-        return states;
-    }
-
-    @JsonIgnore
-    public void setStates(List<State> states) {
-        this.states = states;
-    }
 }

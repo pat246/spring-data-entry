@@ -15,3 +15,21 @@ spring.datasource.password=root
 This file stores display name for domain object \
 rest.description.(domain name) = (display name) \
 e.g. `rest.description.person=A collection of people`
+
+## Note on domain model
+1. App uses spring data rest's power to display available domain model and it's meta data
+2. Field with  onetoone and manytoone relationship are supported. Other relationships i.e. onetomany and manytomany need to be manually ignored either by removing from domain model or by using JsonIgnore annotation e.g.
+
+`
+
+	@JsonIgnore
+    public List<State> getStates() {
+        return states;
+    }
+    
+    @JsonIgnore
+    public void setStates(List<State> states) {
+        this.states = states;
+    }
+`
+
