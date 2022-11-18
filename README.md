@@ -25,7 +25,7 @@ e.g. `rest.description.person=A collection of people`
 ## Note on domain model
 1. App uses spring data rest's power to display available domain model and it's meta data
 2. Field with  onetoone and manytoone relationship are supported. Other relationships i.e. onetomany and manytomany need to be manually ignored either by removing from domain model or by using JsonIgnore annotation e.g.
-3. Fields with OneToOne and ManyToOne relationship, are treated as dropdown selection which by default shows all the data available in table. To pick particular column in dropdown, implement interface DropDownEntity's get_value() method and return whatever value you wish to show in UI.
+3. Fields with OneToOne and ManyToOne relationship, are treated as dropdown selection which by default shows all the data available in table. To pick particular column in dropdown, implement interface `DropDownEntity's get_value()` method and return whatever value you wish to show in UI.
 
 `
 
