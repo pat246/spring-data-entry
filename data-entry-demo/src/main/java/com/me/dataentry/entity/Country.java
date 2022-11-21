@@ -17,10 +17,11 @@ import javax.validation.constraints.Size;
 
 import org.springframework.data.annotation.ReadOnlyProperty;
 
+import com.me.dataentry.core.DropDownEntity;
 import com.me.dataentry.exception.InvalidInputException;
 
 @Entity
-public class Country {
+public class Country implements DropDownEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -101,6 +102,11 @@ public class Country {
         if (!("Y".equalsIgnoreCase(isActive) || "U".equalsIgnoreCase(isActive))) {
             throw new InvalidInputException("VALIDATION_FAILED", "isactive can only be Y or U", "isActive");
         }
+    }
+
+    @Override
+    public String get_value() {
+        return this.name;
     }
 
 }
