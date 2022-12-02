@@ -1,8 +1,8 @@
 package com.me.dataentry.service;
 
 import java.net.URI;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -47,7 +47,7 @@ public class DataEntryService {
         JsonArray descriptorArr = springProfileJson.getAsJsonObject().getAsJsonObject("alps")
                 .getAsJsonArray("descriptor");
         ProfileData profileData = new ProfileData();
-        List<FieldData> fieldData = new ArrayList<>();
+        Map<String, FieldData> fieldData = new HashMap<>();
 
         descriptorArr.forEach(des -> {
             JsonObject obj = des.getAsJsonObject();
@@ -65,13 +65,13 @@ public class DataEntryService {
                     }
                     FieldData data = new FieldData(fieldObj.getAsJsonPrimitive("name").getAsString(),
                             fieldObj.getAsJsonPrimitive("type").getAsString(), entityName);
-                    fieldData.add(data);
+                    fieldData.put(data.getName(), data);
                 });
             }
         });
         profileData.setFields(fieldData);
         JsonElement profileDataGsonOBj = new Gson().toJsonTree(profileData);
-        result.getAsJsonObject().add("profile-data", profileDataGsonOBj);
+        result.getAsJsonObject().add("me_profile_data", profileDataGsonOBj);
         return result.toString();
     }
 

@@ -1,10 +1,10 @@
 package com.me.dataentry.dto;
 
-import java.util.List;
+import java.util.Map;
 
 public class ProfileData {
 
-    public List<FieldData> fields;
+    public Map<String, FieldData> fields;
 
     public static class FieldData {
 
@@ -45,12 +45,13 @@ public class ProfileData {
 
     }
 
-    public List<FieldData> getFields() {
+    public Map<String, FieldData> getFields() {
         return fields;
     }
 
-    public void setFields(List<FieldData> fields) {
+    public void setFields(Map<String, FieldData> fields) {
         this.fields = fields;
     }
 
+    
 }

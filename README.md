@@ -25,18 +25,18 @@ e.g. `rest.description.person=A collection of people`
 ## Note on domain model
 1. App uses spring data rest's power to display available domain model and it's meta data
 2. Field with  onetoone and manytoone relationship are supported. Other relationships i.e. onetomany and manytomany need to be manually ignored either by removing from domain model or by using JsonIgnore annotation e.g.
-3. Fields with OneToOne and ManyToOne relationship, are treated as dropdown selection which by default shows all the data available in table. To pick particular column in dropdown, implement interface `DropDownEntity's get_value()` method and return whatever value you wish to show in UI.
-
-`
-
-    @JsonIgnore
+`    @JsonIgnore
     public List<State> getStates() {
         return states;
-    }
-    
+    }   
     @JsonIgnore
     public void setStates(List<State> states) {
         this.states = states;
     }
 `
 
+3. Fields with OneToOne and ManyToOne relationship, are treated as dropdown selection which by default shows all the data available in table. To pick particular column in dropdown, implement interface `DropDownEntity's get_value()` method and return whatever value you wish to show in UI.
+4. Each field in JPA Entity must have matching field name with getter , setter methods otherwise that field may not be visible while adding/modifying the entity
+5. Each `org.springframework.data.repositoryRepository` interface must have same id type as defined in entity's primary key otherwise , we may get conversion error while modifying data.
+Don't use serialization interface as type
+6. Currently server side pagination is not available so `PagingAndSortingRepository` is not supported.
