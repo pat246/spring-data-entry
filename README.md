@@ -1,12 +1,16 @@
 # spring-data-entry
 ## Overview
-Spring data rest based service to manage domain objects. On top of spring data rest, it provides custom json response to cater to react front-end. Use this along with UI project at <a href="https://github.com/pat246/data-entry">Data Entry UI</a>
+Spring data rest based backend service to manage domain objects. Front end is built using react library ver. 17
+To start with basics, it only requires: 
+1. JPA Entity class 
+2. Spring Repository interface for that Entity
 
 ## lib-data-entry
 Add this dependancy to your spring boot application so it will start exposing spring data rest endpoints
 
 ## data-entry-demo
-Demo spring boot application using lib-data-entry project. It uses h2 db
+Demo spring boot application using lib-data-entry project. It uses h2 db for demo purpose. Run this demo project to evaluate this feature.
+Quick UI skin can be checked out at `https://master.d3jr63qkm8f6fy.amplifyapp.com/catlog`
 
 ## Versions
 1. Java - 1.8
@@ -22,7 +26,7 @@ This file stores display name for domain object \
 rest.description.(domain name) = (display name) \
 e.g. `rest.description.person=A collection of people`
 
-## Note on domain model
+## Notes on domain model
 1. App uses spring data rest's power to display available domain model and it's meta data
 2. Field with  onetoone and manytoone relationship are supported. Other relationships i.e. onetomany and manytomany need to be manually ignored either by removing from domain model or by using JsonIgnore annotation e.g.
 `    @JsonIgnore

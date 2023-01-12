@@ -22,7 +22,7 @@ public class GlobalFilter implements Filter {
         HttpServletRequest request = (HttpServletRequest) req;
         HttpServletResponse response = (HttpServletResponse) resp;
         if (request.getMethod().equalsIgnoreCase(RequestMethod.GET.name())) {
-            response.setHeader("Cache-Control", "max-age=20");
+         //   response.setHeader("Cache-Control", "max-age=20");
         }
         chain.doFilter(request, response);
     }
