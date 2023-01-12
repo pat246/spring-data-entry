@@ -5,6 +5,11 @@ To start with basics, it only needs:
 1. JPA Entity class 
 2. Spring Repository interface for that Entity
 
+For quick demo, clone this repo and run spring boot application `data-entry-demo` which runs on default port 8080 (i.e. http://localhost:8080)
+
+## UI overview
+[Click Here](https://master.d3jr63qkm8f6fy.amplifyapp.com/) to see overview of UI 
+
 ## lib-data-entry
 Add this dependancy to your spring boot application so it will start exposing spring data-rest endpoints
 
