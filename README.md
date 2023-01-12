@@ -1,12 +1,12 @@
 # spring-data-entry
 ## Overview
-Spring data rest based backend service to manage domain objects. Front end is built using react library ver. 17
-To start with basics, it only requires: 
+Spring data-rest backed service to manage JPA Entities. Front end is built using react library (ver. 17)
+To start with basics, it only needs: 
 1. JPA Entity class 
 2. Spring Repository interface for that Entity
 
 ## lib-data-entry
-Add this dependancy to your spring boot application so it will start exposing spring data rest endpoints
+Add this dependancy to your spring boot application so it will start exposing spring data-rest endpoints
 
 ## data-entry-demo
 Demo spring boot application using lib-data-entry project. It uses h2 db for demo purpose. Run this demo project to evaluate this feature.
